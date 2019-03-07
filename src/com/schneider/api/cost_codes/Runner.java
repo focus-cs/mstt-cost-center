@@ -10,8 +10,15 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 import com.schneider.api.cost_codes.business.CSVManager;
+import com.schneider.api.cost_codes.business.LineManager;
+import com.schneider.api.cost_codes.dao.BaseTamponDao;
+import com.schneider.api.cost_codes.data.LineImport;
 import com.schneider.api.cost_codes.data.SciformaImport;
+import com.schneider.api.cost_codes.database.DbConnection;
+import com.schneider.api.cost_codes.database.DbController;
+import com.schneider.api.cost_codes.database.DbError;
 import com.sciforma.psnext.api.Session;
+import java.util.List;
 
 public class Runner {
 
@@ -21,6 +28,8 @@ public class Runner {
      * Logger Class instance.
      */
     private static final Logger LOG = Logger.getLogger(Runner.class);
+    private static DbConnection dbcon;
+    
 
     // -------------------------------------------------------------------------------------------------------------
     /**
@@ -49,9 +58,21 @@ public class Runner {
 
                     // Reconfigure log4j logger
                     PropertyConfigurator.configure(args[1]);
-
+                    initDB(properties);
+                    LOG.debug("Database connected .. ");
                     // Launch process
-                    new CSVManager(session).execute("", properties);
+                    //new CSVManager(session).execute("", properties);
+                    BaseTamponDao dao = new BaseTamponDao(dbcon);
+                    List<LineImport> lines = dao.readDB();
+                    LineManager manager = new LineManager(session);
+                    if(manager.execute(properties, lines)){
+                        LOG.debug("All lines ok => clean data in DB ... ");
+                        dao.cleanData();
+                    }else{
+                        LOG.debug("All lines are not ok => keep data in DB ... ");
+                    }
+                    
+                    
                 } catch (Exception e) {
                     // Exception to connect to PSNext
                     e.printStackTrace();
@@ -87,6 +108,20 @@ public class Runner {
         final InputStream resourceAsStream = new FileInputStream(file);
         properties.load(resourceAsStream);
         return properties;
+    }
+    
+    private static void initDB(Properties properties) {
+        try {
+            DbController dbc = new DbController();
+            dbc.readDbConfiguration(properties);
+            dbcon = new DbConnection();
+            dbcon.setDbModel(dbc.getDbModel());
+            dbcon.connexion();
+        } catch (DbError ex) {
+            LOG.error("Fail to connect DB");
+        } catch (Exception ex) {
+            LOG.error("Fail to connect DB");
+        }
     }
 
 	// -------------------------------------------------------------------------------------------------------------

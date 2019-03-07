@@ -1,0 +1,80 @@
+2019-03-06 21:31:01,270 INFO  com.schneider.api.cost_codes.Runner - MSTT Cost Center v1.2 (2018/12/20)
+2019-03-06 21:31:01,271 DEBUG com.schneider.api.cost_codes.Runner - D:/Professionnel/MSTT/mstt-cost-center/conf/dev/psconnect.properties properties file loaded
+2019-03-06 21:31:01,514 DEBUG com.schneider.api.cost_codes.data.FileImport - Connecting to https://schneider-mstt.sciforma.net/sciforma
+2019-03-06 21:34:45,668 DEBUG com.schneider.api.cost_codes.data.FileImport - Connected to PSNext
+2019-03-06 21:34:45,686 ERROR com.schneider.api.cost_codes.Runner - Fail to connect DB
+2019-03-06 21:34:48,362 DEBUG com.schneider.api.cost_codes.data.FileImport - Locking global
+2019-03-06 21:36:20,144 DEBUG com.schneider.api.cost_codes.data.FileImport - Global locked
+2019-03-06 21:36:20,152 ERROR com.schneider.api.cost_codes.business.CSVManager - The API cannot reach the directory <D:\Professionnel\MSTT\mstt-cost-center\requests>
+2019-03-06 21:36:20,152 DEBUG com.schneider.api.cost_codes.data.FileImport - Unlocking global
+2019-03-06 21:42:37,465 INFO  com.schneider.api.cost_codes.Runner - MSTT Cost Center v1.2 (2018/12/20)
+2019-03-06 21:42:37,466 DEBUG com.schneider.api.cost_codes.Runner - D:/Professionnel/MSTT/mstt-cost-center/conf/dev/psconnect.properties properties file loaded
+2019-03-06 21:42:37,789 DEBUG com.schneider.api.cost_codes.data.FileImport - Connecting to https://schneider-mstt.sciforma.net/sciforma
+2019-03-06 21:45:32,621 DEBUG com.schneider.api.cost_codes.data.FileImport - Connected to PSNext
+2019-03-06 21:45:32,804 ERROR com.schneider.api.cost_codes.Runner - Fail to connect DB
+2019-03-06 21:45:36,711 DEBUG com.schneider.api.cost_codes.data.FileImport - Locking global
+2019-03-06 21:46:58,748 DEBUG com.schneider.api.cost_codes.data.FileImport - Global locked
+2019-03-06 21:46:58,749 DEBUG com.schneider.api.cost_codes.business.CSVManager - No file found.
+2019-03-06 21:46:58,749 DEBUG com.schneider.api.cost_codes.data.FileImport - Unlocking global
+2019-03-06 21:49:02,778 DEBUG com.schneider.api.cost_codes.data.FileImport - Global unlocked
+2019-03-06 21:49:59,423 INFO  com.schneider.api.cost_codes.Runner - MSTT Cost Center v1.2 (2018/12/20)
+2019-03-06 21:49:59,424 DEBUG com.schneider.api.cost_codes.Runner - D:/Professionnel/MSTT/mstt-cost-center/conf/dev/psconnect.properties properties file loaded
+2019-03-06 21:49:59,621 DEBUG com.schneider.api.cost_codes.data.FileImport - Connecting to https://schneider-mstt.sciforma.net/sciforma
+2019-03-06 21:52:47,360 DEBUG com.schneider.api.cost_codes.data.FileImport - Connected to PSNext
+2019-03-06 21:55:18,865 ERROR com.schneider.api.cost_codes.Runner - Fail to connect DB
+2019-03-06 21:55:22,087 DEBUG com.schneider.api.cost_codes.business.CSVManager - D:\Professionnel\MSTT\mstt-cost-center\requests
+2019-03-06 21:55:22,087 DEBUG com.schneider.api.cost_codes.data.FileImport - Locking global
+2019-03-06 21:56:43,515 DEBUG com.schneider.api.cost_codes.data.FileImport - Global locked
+2019-03-06 21:56:55,034 DEBUG com.schneider.api.cost_codes.business.CSVManager - No file found.
+2019-03-06 21:56:55,034 DEBUG com.schneider.api.cost_codes.data.FileImport - Unlocking global
+2019-03-06 21:58:51,411 DEBUG com.schneider.api.cost_codes.data.FileImport - Global unlocked
+2019-03-06 22:04:51,516 INFO  com.schneider.api.cost_codes.Runner - MSTT Cost Center v1.2 (2018/12/20)
+2019-03-06 22:04:51,518 DEBUG com.schneider.api.cost_codes.Runner - D:/Professionnel/MSTT/mstt-cost-center/conf/dev/psconnect.properties properties file loaded
+2019-03-06 22:04:51,767 DEBUG com.schneider.api.cost_codes.data.FileImport - Connecting to https://schneider-mstt.sciforma.net/sciforma
+2019-03-06 22:08:42,624 DEBUG com.schneider.api.cost_codes.data.FileImport - Connected to PSNext
+2019-03-06 22:08:54,869 DEBUG com.schneider.api.cost_codes.business.CSVManager - D:\Professionnel\MSTT\mstt-cost-center\requests
+2019-03-06 22:08:54,870 DEBUG com.schneider.api.cost_codes.data.FileImport - Locking global
+2019-03-06 22:10:50,738 DEBUG com.schneider.api.cost_codes.data.FileImport - Global locked
+2019-03-06 22:10:50,744 DEBUG com.schneider.api.cost_codes.business.CSVManager - File = D:\Professionnel\MSTT\mstt-cost-center\requests\importccenterdv.csv
+2019-03-06 22:10:50,786 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'CA2100'
+2019-03-06 22:10:50,788 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '02206012_ 11-12-2018'
+2019-03-06 22:10:50,788 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'CA2100_02206012_ 11-12-2018'
+2019-03-06 22:10:50,789 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'CA2100_02206012_11-12-2018'
+2019-03-06 22:10:50,844 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'DE58 01_C-PRO AGS Regensburg Germany'
+2019-03-06 22:10:50,844 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000_11-12-2018'
+2019-03-06 22:10:50,844 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'DE58 01_C-PRO AGS Regensburg Germany_1000_11-12-2018'
+2019-03-06 22:10:50,844 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'DE5801_C-PRO AGS Regensburg Germany_1000_11-12-2018'
+2019-03-06 22:10:50,845 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107_T -EM US'
+2019-03-06 22:10:50,846 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US013067_11-12-2018'
+2019-03-06 22:10:50,846 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_T -EM US_1000-US013067_11-12-2018'
+2019-03-06 22:10:50,848 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_T-EM US_1000-US013067_11-12-2018'
+2019-03-06 22:10:50,849 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0105'
+2019-03-06 22:10:50,849 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US018029_ 11-12-2018'
+2019-03-06 22:10:50,849 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0105_1000-US018029_ 11-12-2018'
+2019-03-06 22:10:50,850 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0105_1000-US018029_11-12-2018'
+2019-03-06 22:10:50,851 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0105_T-Partner US'
+2019-03-06 22:10:50,852 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1 000-US018029_11-12-2018'
+2019-03-06 22:10:50,853 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0105_T-Partner US_1 000-US018029_11-12-2018'
+2019-03-06 22:10:50,853 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0105_T-Partner US_1000-US018029_11-12-2018'
+2019-03-06 22:10:50,854 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107'
+2019-03-06 22:10:50,856 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US0 18029_11-12-2018'
+2019-03-06 22:10:50,856 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_1000-US0 18029_11-12-2018'
+2019-03-06 22:10:50,856 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_1000-US018029_11-12-2018'
+2019-03-06 22:10:50,865 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107'
+2019-03-06 22:10:50,866 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US0 18030_11-12-2018'
+2019-03-06 22:10:50,866 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_1000-US0 18030_11-12-2018'
+2019-03-06 22:10:50,866 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_1000-US018030_11-12-2018'
+2019-03-06 22:10:50,869 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107_T-EM US'
+2019-03-06 22:10:50,869 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '10 00-US018030_11-12-2018'
+2019-03-06 22:10:50,869 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_T-EM US_10 00-US018030_11-12-2018'
+2019-03-06 22:10:50,870 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_T-EM US_1000-US018030_11-12-2018'
+2019-03-06 22:10:50,871 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107'
+2019-03-06 22:10:50,871 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US018 031_11-12-2018'
+2019-03-06 22:10:50,871 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_1000-US018 031_11-12-2018'
+2019-03-06 22:10:50,871 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_1000-US018031_11-12-2018'
+2019-03-06 22:10:50,872 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107_T-EM US'
+2019-03-06 22:10:50,872 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-U S018031_11-12-2018'
+2019-03-06 22:10:50,872 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_T-EM US_1000-U S018031_11-12-2018'
+2019-03-06 22:10:50,873 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_T-EM US_1000-US018031_11-12-2018'
+2019-03-06 22:10:50,886 DEBUG com.schneider.api.cost_codes.data.FileImport - Unlocking global
+2019-03-06 22:13:17,747 DEBUG com.schneider.api.cost_codes.data.FileImport - Global unlocked
