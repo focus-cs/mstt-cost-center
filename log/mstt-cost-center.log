@@ -78,3 +78,16 @@
 2019-03-06 22:10:50,873 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_T-EM US_1000-US018031_11-12-2018'
 2019-03-06 22:10:50,886 DEBUG com.schneider.api.cost_codes.data.FileImport - Unlocking global
 2019-03-06 22:13:17,747 DEBUG com.schneider.api.cost_codes.data.FileImport - Global unlocked
+2019-03-07 09:17:23,685 INFO  com.schneider.api.cost_codes.Runner - MSTT Cost Center v1.2 (2018/12/20)
+2019-03-07 09:17:23,686 DEBUG com.schneider.api.cost_codes.Runner - D:/Professionnel/MSTT/mstt-cost-center/conf/dev/psconnect.properties properties file loaded
+2019-03-07 09:17:23,908 DEBUG com.schneider.api.cost_codes.data.FileImport - Connecting to https://schneider-mstt.sciforma.net/sciforma
+2019-03-07 09:20:16,821 DEBUG com.schneider.api.cost_codes.data.FileImport - Connected to PSNext
+2019-03-07 09:20:17,483 DEBUG com.schneider.api.cost_codes.Runner - Database connected .. 
+2019-03-07 09:20:17,588 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - SELECT "Country", "Access Cost Code", "Reporting Entity", "Local Cost Center ID", "Local Cost Center name", "Internal Cost Center Id", "Hourly labor rate", "Hourly labor rate date", "Last update date", "Yearly Projects hours", "Growth Index", "Monthly labor rate", "Monthly labor rate date", "Global Cost Center Id", "RE global cost center", "Global Cost Center name", "Global Profit center ID", "Global Profit center name", "Labor rate currency", "Action" FROM psnext."C5_mstt-cost-center_IN"
+2019-03-07 09:20:22,305 DEBUG com.schneider.api.cost_codes.data.FileImport - Locking global
+2019-03-07 09:21:45,871 DEBUG com.schneider.api.cost_codes.data.FileImport - Global locked
+2019-03-07 09:21:45,872 DEBUG com.schneider.api.cost_codes.data.FileImport - Unlocking global
+2019-03-07 09:23:46,319 DEBUG com.schneider.api.cost_codes.data.FileImport - Global unlocked
+2019-03-07 09:23:46,320 DEBUG com.schneider.api.cost_codes.Runner - All lines ok => clean data in DB ... 
+2019-03-07 09:23:46,320 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - DELETE FROM psnext."C5_mstt-cost-center_IN"
+2019-03-07 09:23:46,660 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: Aucun résultat retourné par la requête.

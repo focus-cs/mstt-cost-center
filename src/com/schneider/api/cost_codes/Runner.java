@@ -22,7 +22,7 @@ import java.util.List;
 
 public class Runner {
 
-    public static final String APP_INFO = "MSTT Cost Center v1.2 (2018/12/20)";
+    public static final String APP_INFO = "MSTT Cost Center v1.2";
 
     /**
      * Logger Class instance.
