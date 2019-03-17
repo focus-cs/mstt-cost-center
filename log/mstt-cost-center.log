@@ -157,3 +157,187 @@
 2019-03-17 16:35:59,274 DEBUG com.schneider.api.cost_codes.data.FileImport - Unlocking global
 2019-03-17 16:38:03,049 DEBUG com.schneider.api.cost_codes.data.FileImport - Global unlocked
 2019-03-17 16:38:03,049 DEBUG com.schneider.api.cost_codes.Runner - All lines are not ok => keep data in DB ... 
+2019-03-17 17:28:54,909 INFO  com.schneider.api.cost_codes.Runner - MSTT Cost Center v1.3
+2019-03-17 17:28:54,910 DEBUG com.schneider.api.cost_codes.Runner - D:/Professionnel/MSTT/mstt-cost-center/conf/dev/psconnect.properties properties file loaded
+2019-03-17 17:28:55,140 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Connecting to https://schneider-mstt.sciforma.net/sciforma
+2019-03-17 17:32:33,717 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Connected to PSNext
+2019-03-17 17:32:34,275 DEBUG com.schneider.api.cost_codes.Runner - Database connected .. 
+2019-03-17 17:32:34,277 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - UPDATE psnext."C5_mstt-cost-center_IN" SET "PackageName"='662b9728-95f3-4fc7-be09-3684da198c19' WHERE "PackageName" is null and "ExecutionDate" is null
+2019-03-17 17:32:34,327 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - SELECT distinct "PackageName" FROM psnext."C5_mstt-cost-center_IN" WHERE "ExecutionDate" is null
+2019-03-17 17:32:34,378 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - UPDATE psnext."C5_mstt-cost-center_IN" SET "ExecutionDate"='2019-03-17' WHERE "ExecutionDate" is null
+2019-03-17 17:32:34,426 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - SELECT "Country", "Access Cost Code", "Reporting Entity", "Local Cost Center ID", "Local Cost Center name", "Internal Cost Center Id", "Hourly labor rate", "Hourly labor rate date", "Last update date", "Yearly Projects hours", "Growth Index", "Monthly labor rate", "Monthly labor rate date", "Global Cost Center Id", "RE global cost center", "Global Cost Center name", "Global Profit center ID", "Global Profit center name", "Labor rate currency", "Action" FROM psnext."C5_mstt-cost-center_IN" WHERE "PackageName" ='bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                '
+2019-03-17 17:32:36,805 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Locking global
+2019-03-17 17:34:27,816 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Global locked
+2019-03-17 17:34:27,828 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (IT3200_02146991_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:27,933 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near ","
+  Position : 147
+2019-03-17 17:34:27,933 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'IT3200'
+2019-03-17 17:34:27,933 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '02146991_13-02-2019-'
+2019-03-17 17:34:27,933 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'IT3200_02146991_13-02-2019-'
+2019-03-17 17:34:27,934 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'IT3200_02146991_13-02-2019'
+2019-03-17 17:34:27,939 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (CA2100_02206012_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:27,992 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near ","
+  Position : 147
+2019-03-17 17:34:27,992 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'CA2100'
+2019-03-17 17:34:27,993 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '02206012_13-02-2019-'
+2019-03-17 17:34:27,993 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'CA2100_02206012_13-02-2019-'
+2019-03-17 17:34:27,993 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'CA2100_02206012_13-02-2019'
+2019-03-17 17:34:27,993 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (DE5801_1000_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:28,039 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near ","
+  Position : 143
+2019-03-17 17:34:28,040 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'DE5801'
+2019-03-17 17:34:28,040 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000_13-02-2019-'
+2019-03-17 17:34:28,040 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'DE5801_1000_13-02-2019-'
+2019-03-17 17:34:28,040 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'DE5801_1000_13-02-2019'
+2019-03-17 17:34:28,040 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:28,085 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near "AGS"
+  Position : 133
+2019-03-17 17:34:28,085 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'DE5801_C-PRO AGS Regensburg Germany'
+2019-03-17 17:34:28,085 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000_13-02-2019-'
+2019-03-17 17:34:28,085 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019-'
+2019-03-17 17:34:28,085 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019'
+2019-03-17 17:34:28,086 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:28,147 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near "AGS"
+  Position : 133
+2019-03-17 17:34:28,147 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'DE5801_C-PRO AGS Regensburg Germany'
+2019-03-17 17:34:28,147 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000_13-02-2019-'
+2019-03-17 17:34:28,147 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019-'
+2019-03-17 17:34:28,147 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019'
+2019-03-17 17:34:28,148 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (US0105_1000-US018029_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:28,266 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near ","
+  Position : 152
+2019-03-17 17:34:28,266 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0105'
+2019-03-17 17:34:28,266 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 17:34:28,266 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0105_1000-US018029_13-02-2019-'
+2019-03-17 17:34:28,266 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0105_1000-US018029_13-02-2019'
+2019-03-17 17:34:28,267 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (US0105_T-Partner US_1000-US018029_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:28,309 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near "US_1000"
+  Position : 137
+2019-03-17 17:34:28,309 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0105_T-Partner US'
+2019-03-17 17:34:28,309 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 17:34:28,309 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0105_T-Partner US_1000-US018029_13-02-2019-'
+2019-03-17 17:34:28,309 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0105_T-Partner US_1000-US018029_13-02-2019'
+2019-03-17 17:34:28,310 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (US0107_1000-US018029_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:28,351 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near ","
+  Position : 152
+2019-03-17 17:34:28,351 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107'
+2019-03-17 17:34:28,351 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 17:34:28,351 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_1000-US018029_13-02-2019-'
+2019-03-17 17:34:28,352 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_1000-US018029_13-02-2019'
+2019-03-17 17:34:28,352 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (US0107_T-EM US_1000-US018029_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:28,392 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near "US_1000"
+  Position : 132
+2019-03-17 17:34:28,392 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107_T-EM US'
+2019-03-17 17:34:28,392 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 17:34:28,392 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_T-EM US_1000-US018029_13-02-2019-'
+2019-03-17 17:34:28,392 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_T-EM US_1000-US018029_13-02-2019'
+2019-03-17 17:34:28,393 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (US0107_1000-US018030_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:28,442 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near ","
+  Position : 152
+2019-03-17 17:34:28,443 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107'
+2019-03-17 17:34:28,443 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018030_13-02-2019-'
+2019-03-17 17:34:28,443 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_1000-US018030_13-02-2019-'
+2019-03-17 17:34:28,443 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_1000-US018030_13-02-2019'
+2019-03-17 17:34:28,444 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (US0107_T-EM US_1000-US018030_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:28,492 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near "US_1000"
+  Position : 132
+2019-03-17 17:34:28,492 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107_T-EM US'
+2019-03-17 17:34:28,492 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018030_13-02-2019-'
+2019-03-17 17:34:28,492 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_T-EM US_1000-US018030_13-02-2019-'
+2019-03-17 17:34:28,492 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_T-EM US_1000-US018030_13-02-2019'
+2019-03-17 17:34:28,493 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (US0107_1000-US018031_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:28,545 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near ","
+  Position : 152
+2019-03-17 17:34:28,545 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107'
+2019-03-17 17:34:28,545 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018031_13-02-2019-'
+2019-03-17 17:34:28,545 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_1000-US018031_13-02-2019-'
+2019-03-17 17:34:28,545 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_1000-US018031_13-02-2019'
+2019-03-17 17:34:28,546 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES (US0107_T-EM US_1000-US018031_13-02-2019-, 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                ', '2019-03-17');
+2019-03-17 17:34:28,602 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: ERROR: syntax error at or near "US_1000"
+  Position : 132
+2019-03-17 17:34:28,602 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107_T-EM US'
+2019-03-17 17:34:28,602 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018031_13-02-2019-'
+2019-03-17 17:34:28,602 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_T-EM US_1000-US018031_13-02-2019-'
+2019-03-17 17:34:28,602 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_T-EM US_1000-US018031_13-02-2019'
+2019-03-17 17:34:28,602 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Unlocking global
+2019-03-17 17:36:30,141 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Global unlocked
+2019-03-17 17:36:30,141 DEBUG com.schneider.api.cost_codes.Runner - All lines are not ok => keep data in DB ... 
+2019-03-17 17:40:32,566 INFO  com.schneider.api.cost_codes.Runner - MSTT Cost Center v1.3
+2019-03-17 17:40:32,568 DEBUG com.schneider.api.cost_codes.Runner - D:/Professionnel/MSTT/mstt-cost-center/conf/dev/psconnect.properties properties file loaded
+2019-03-17 17:40:32,790 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Connecting to https://schneider-mstt.sciforma.net/sciforma
+2019-03-17 17:43:28,482 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Connected to PSNext
+2019-03-17 17:43:29,034 DEBUG com.schneider.api.cost_codes.Runner - Database connected .. 
+2019-03-17 17:43:29,036 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - UPDATE psnext."C5_mstt-cost-center_IN" SET "PackageName"='5036b83d-e04b-424d-84de-eb1e87533eff' WHERE "PackageName" is null and "ExecutionDate" is null
+2019-03-17 17:43:29,081 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - SELECT distinct "PackageName" FROM psnext."C5_mstt-cost-center_IN" WHERE "ExecutionDate" is null
+2019-03-17 17:43:29,137 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - UPDATE psnext."C5_mstt-cost-center_IN" SET "ExecutionDate"='2019-03-17' WHERE "ExecutionDate" is null
+2019-03-17 17:43:29,181 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - SELECT "Country", "Access Cost Code", "Reporting Entity", "Local Cost Center ID", "Local Cost Center name", "Internal Cost Center Id", "Hourly labor rate", "Hourly labor rate date", "Last update date", "Yearly Projects hours", "Growth Index", "Monthly labor rate", "Monthly labor rate date", "Global Cost Center Id", "RE global cost center", "Global Cost Center name", "Global Profit center ID", "Global Profit center name", "Labor rate currency", "Action" FROM psnext."C5_mstt-cost-center_IN" WHERE "PackageName" ='bb49b596-c866-4917-b96c-a6edf6da1d8c'
+2019-03-17 17:43:31,750 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Locking global
+2019-03-17 17:45:08,106 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Global locked
+2019-03-17 17:45:08,125 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('IT3200_02146991_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,167 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'IT3200'
+2019-03-17 17:45:08,167 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '02146991_13-02-2019-'
+2019-03-17 17:45:08,167 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'IT3200_02146991_13-02-2019-'
+2019-03-17 17:45:08,167 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'IT3200_02146991_13-02-2019'
+2019-03-17 17:45:08,170 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('CA2100_02206012_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,218 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'CA2100'
+2019-03-17 17:45:08,218 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '02206012_13-02-2019-'
+2019-03-17 17:45:08,218 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'CA2100_02206012_13-02-2019-'
+2019-03-17 17:45:08,218 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'CA2100_02206012_13-02-2019'
+2019-03-17 17:45:08,219 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('DE5801_1000_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,260 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'DE5801'
+2019-03-17 17:45:08,260 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000_13-02-2019-'
+2019-03-17 17:45:08,260 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'DE5801_1000_13-02-2019-'
+2019-03-17 17:45:08,260 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'DE5801_1000_13-02-2019'
+2019-03-17 17:45:08,261 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,308 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'DE5801_C-PRO AGS Regensburg Germany'
+2019-03-17 17:45:08,308 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000_13-02-2019-'
+2019-03-17 17:45:08,308 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019-'
+2019-03-17 17:45:08,308 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019'
+2019-03-17 17:45:08,309 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,351 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'DE5801_C-PRO AGS Regensburg Germany'
+2019-03-17 17:45:08,351 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000_13-02-2019-'
+2019-03-17 17:45:08,351 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019-'
+2019-03-17 17:45:08,351 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019'
+2019-03-17 17:45:08,352 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('US0105_1000-US018029_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,392 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0105'
+2019-03-17 17:45:08,392 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 17:45:08,392 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0105_1000-US018029_13-02-2019-'
+2019-03-17 17:45:08,392 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0105_1000-US018029_13-02-2019'
+2019-03-17 17:45:08,393 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('US0105_T-Partner US_1000-US018029_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,435 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0105_T-Partner US'
+2019-03-17 17:45:08,435 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 17:45:08,435 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0105_T-Partner US_1000-US018029_13-02-2019-'
+2019-03-17 17:45:08,435 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0105_T-Partner US_1000-US018029_13-02-2019'
+2019-03-17 17:45:08,436 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('US0107_1000-US018029_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,477 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107'
+2019-03-17 17:45:08,477 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 17:45:08,477 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_1000-US018029_13-02-2019-'
+2019-03-17 17:45:08,477 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_1000-US018029_13-02-2019'
+2019-03-17 17:45:08,478 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('US0107_T-EM US_1000-US018029_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,521 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107_T-EM US'
+2019-03-17 17:45:08,521 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 17:45:08,521 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_T-EM US_1000-US018029_13-02-2019-'
+2019-03-17 17:45:08,521 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_T-EM US_1000-US018029_13-02-2019'
+2019-03-17 17:45:08,522 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('US0107_1000-US018030_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,568 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107'
+2019-03-17 17:45:08,568 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018030_13-02-2019-'
+2019-03-17 17:45:08,568 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_1000-US018030_13-02-2019-'
+2019-03-17 17:45:08,568 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_1000-US018030_13-02-2019'
+2019-03-17 17:45:08,569 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('US0107_T-EM US_1000-US018030_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,622 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107_T-EM US'
+2019-03-17 17:45:08,623 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018030_13-02-2019-'
+2019-03-17 17:45:08,624 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_T-EM US_1000-US018030_13-02-2019-'
+2019-03-17 17:45:08,624 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_T-EM US_1000-US018030_13-02-2019'
+2019-03-17 17:45:08,625 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('US0107_1000-US018031_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,665 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107'
+2019-03-17 17:45:08,665 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018031_13-02-2019-'
+2019-03-17 17:45:08,665 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_1000-US018031_13-02-2019-'
+2019-03-17 17:45:08,665 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_1000-US018031_13-02-2019'
+2019-03-17 17:45:08,666 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - INSERT INTO psnext."C5_mstt-cost-center_OUT"("ID", "ERROR_CODE", "BREAK_CODE", "PackageName", "ExecutionDate") VALUES ('US0107_T-EM US_1000-US018031_13-02-2019-', 5, 1, 'bb49b596-c866-4917-b96c-a6edf6da1d8c', '2019-03-17');
+2019-03-17 17:45:08,718 DEBUG com.schneider.api.cost_codes.data.SciformaImport - reportingEntity = 'US0107_T-EM US'
+2019-03-17 17:45:08,719 DEBUG com.schneider.api.cost_codes.data.SciformaImport - localCostCenterID = '1000-US018031_13-02-2019-'
+2019-03-17 17:45:08,719 DEBUG com.schneider.api.cost_codes.data.SciformaImport - concat = 'US0107_T-EM US_1000-US018031_13-02-2019-'
+2019-03-17 17:45:08,719 DEBUG com.schneider.api.cost_codes.data.SciformaImport - internalCostCenterID = 'US0107_T-EM US_1000-US018031_13-02-2019'
+2019-03-17 17:45:08,719 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Unlocking global
+2019-03-17 17:47:16,996 DEBUG com.schneider.api.cost_codes.data.SciformaImport - Global unlocked
+2019-03-17 17:47:16,996 DEBUG com.schneider.api.cost_codes.Runner - All lines are not ok => keep data in DB ... 

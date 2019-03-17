@@ -99,7 +99,7 @@ public class BaseTamponDao {
     
     public void writeLog(String id, int errorCode, int breakCode, String packageName){
         String query = "INSERT INTO psnext.\"C5_mstt-cost-center_OUT\"(\"ID\", \"ERROR_CODE\", \"BREAK_CODE\", \"PackageName\", \"ExecutionDate\") "
-                     + "VALUES ("+id+", "+errorCode+", "+breakCode+", '"+packageName+"', '"+sdf.format(cal.getTime())+"');";
+                     + "VALUES ('"+id+"', "+errorCode+", "+breakCode+", '"+packageName+"', '"+sdf.format(cal.getTime())+"');";
         try {
             LOG.debug(query);
             dbcon.executeUpdate(query);
@@ -119,7 +119,7 @@ public class BaseTamponDao {
             LOG.debug(query);
             ResultSet rs = dbcon.executeRequete(query);
             while (rs.next()) {
-                packages.add(rs.getString(1));
+                packages.add(rs.getString(1).trim());
             }
             query = "UPDATE psnext.\"C5_mstt-cost-center_IN\" SET \"ExecutionDate\"='"+sdf.format(cal.getTime())+"' WHERE \"ExecutionDate\" is null";
             LOG.debug(query);
