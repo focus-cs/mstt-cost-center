@@ -7,6 +7,7 @@ package com.schneider.api.cost_codes.business;
 
 import com.schneider.api.cost_codes.data.LineImport;
 import com.schneider.api.cost_codes.data.SciformaImport;
+import com.schneider.api.cost_codes.database.DbConnection;
 import com.sciforma.psnext.api.Session;
 import java.io.File;
 import java.util.List;
@@ -27,7 +28,7 @@ public class LineManager {
     /**
      * Logger instance.
      */
-    private static final Logger LOG = Logger.getLogger(CSVManager.class);
+    private static final Logger LOG = Logger.getLogger(LineManager.class);
 
     /**
      * Sciforma Session.
@@ -36,20 +37,23 @@ public class LineManager {
 
     private SciformaImport sciforma;
 
-    public LineManager(Session session) {
+    private DbConnection dbcon;
+
+    public LineManager(Session session, DbConnection dbcon) {
         this.session = session;
+        this.dbcon = dbcon;
     }
 
-    public boolean execute(final Properties properties, List<LineImport> lines) {
-        this.sciforma = new SciformaImport(this.session, properties);
-         boolean allLineOK = true;
+    public boolean execute(final Properties properties, List<LineImport> lines, String currentPackage) {
+        this.sciforma = new SciformaImport(this.session, properties, dbcon, currentPackage);
+        boolean allLineOK = true;
         try {
             if (this.sciforma.openGlobal()) {
                 try {
                     for (LineImport line : lines) {
                         if (this.sciforma.checkLine(line)) {
                             if (this.sciforma.insertLine(line)) {
-                                USER_LOG.error(line.getReportingEntity() + "_" + line.getLocalCostCenterID(), 0,                                        0);
+                                USER_LOG.error(line.getReportingEntity() + "_" + line.getLocalCostCenterID(), 0, 0, currentPackage);
                             } else {
                                 allLineOK = false;
                             }
@@ -57,7 +61,7 @@ public class LineManager {
                             allLineOK = false;
                         }
                     }
-                    
+
                 } catch (Exception e) {
                     LOG.error(e);
                 }

@@ -1,37 +1,51 @@
 package com.schneider.api.cost_codes.business;
 
+import com.schneider.api.cost_codes.dao.BaseTamponDao;
+import com.schneider.api.cost_codes.database.DbConnection;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserLog {
-	
-	private static UserLog classInstance;
 
-	private static List<String> traces;
+    private static UserLog classInstance;
 
-	public static UserLog getInstance() {
-		return classInstance == null ? classInstance = new UserLog() : classInstance;
-	}
+    private static List<String> traces;
 
-	public static UserLog getInstance(String csvFileName) {
-		classInstance = new UserLog();
-		return classInstance;
-	}
+    private static BaseTamponDao dao;
 
-	public UserLog() {
-		traces = new ArrayList<String>();
-	}
+    public UserLog(DbConnection dbcon) {
+        this.traces = new ArrayList<String>();
+        this.dao = new BaseTamponDao(dbcon);
+    }
 
-	public void info(final String msg) {
-		traces.add("INFO: " + msg);
-	}
+    public static UserLog getInstance() {
+        return classInstance == null ? classInstance = new UserLog() : classInstance;
+    }
 
-	public List<String> getTraces() {
-		return traces;
-	}
+    public static UserLog getInstance(String csvFileName) {
+        classInstance = new UserLog();
+        return classInstance;
+    }
+    
+    public void setConnection(DbConnection dbcon) {
+        this.dao = new BaseTamponDao(dbcon);
+    }
 
-	public void error(final String id, int errorCode, int breakcode) {
-		traces.add(id + ";" + errorCode + ";" + breakcode);
-	}
-	
+    public UserLog() {
+        traces = new ArrayList<String>();
+    }
+
+    public void info(final String msg) {
+        traces.add("INFO: " + msg);
+    }
+
+    public List<String> getTraces() {
+        return traces;
+    }
+
+    public void error(final String id, int errorCode, int breakcode , String packageName) {
+        //traces.add(id + ";" + errorCode + ";" + breakcode);
+        dao.writeLog(id, errorCode, breakcode, packageName);
+    }
+
 }

@@ -9,6 +9,7 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 
 import com.schneider.api.cost_codes.business.UserLog;
+import com.schneider.api.cost_codes.database.DbConnection;
 import com.sciforma.psnext.api.DataFormatException;
 import com.sciforma.psnext.api.DataViewRow;
 import com.sciforma.psnext.api.FieldDefinitions;
@@ -24,7 +25,7 @@ public class SciformaImport {
 
 	private static final UserLog USER_LOG = UserLog.getInstance();
 
-	private static final Logger LOG = Logger.getLogger(FileImport.class);
+	private static final Logger LOG = Logger.getLogger(SciformaImport.class);
 
 	private Session session;
 
@@ -35,23 +36,28 @@ public class SciformaImport {
 	private String csv_numeric_separator;
 
 	private String psnext_numeric_separator;
+        
+        private String currentPackage;
+        
 
 	public SciformaImport() {
 
 	}
 	
 	@SuppressWarnings("unchecked")
-	public SciformaImport(Session session, Properties props) {
+	public SciformaImport(Session session, Properties props, DbConnection dbcon,String currentPackage) {
 		this.session = session;
 		this.global = new Global();
 		this.csv_numeric_separator = props.getProperty("csv.numeric.separator", ".");
 		this.psnext_numeric_separator = props.getProperty("psnext.numeric.separator", ".");
+                this.currentPackage = currentPackage;
+                USER_LOG.setConnection(dbcon);
 		
 		try {
 			this.dataViewRowList = (ArrayList<DataViewRow>) session.getDataViewRowList("Cost Centers Management",
 					this.global);
 		} catch (PSException e) {
-			USER_LOG.error("Cost Centers Management dataview", 6, 2);
+			USER_LOG.error("Cost Centers Management dataview", 6, 2, currentPackage);
 			LOG.error(e);
 			e.printStackTrace();
 		}
@@ -140,20 +146,20 @@ public class SciformaImport {
 //		}
 		
 		if (reportingEntity.isEmpty()) {
-			USER_LOG.error(reportingEntity + "_" + localCostCenterID, 2, 1);
+			USER_LOG.error(reportingEntity + "_" + localCostCenterID, 2, 1 ,currentPackage);
 			return false;
 		}
 
 		/****************** Test Local cost center ID *************************/
 
 		if (localCostCenterID.length() >= 255) {
-			USER_LOG.error(reportingEntity + "_" + localCostCenterID, 3, 1);
+			USER_LOG.error(reportingEntity + "_" + localCostCenterID, 3, 1 ,currentPackage);
 			return false;
 		}
 
 		/****************** Test Internal Cost Center Id *************************/
 		if (!(reportingEntity + "_" + localCostCenterID).equals(internalCostCenterID)) {
-			USER_LOG.error(reportingEntity + "_" + localCostCenterID, 5, 1);
+			USER_LOG.error(reportingEntity + "_" + localCostCenterID, 5, 1 ,currentPackage);
 			LOG.debug("reportingEntity = '" + reportingEntity + "'");
 			LOG.debug("localCostCenterID = '" + localCostCenterID + "'");
 			LOG.debug("concat = '" + reportingEntity + "_" + localCostCenterID + "'");
@@ -188,7 +194,7 @@ public class SciformaImport {
 			}
 
 			if (!verif) {
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 0, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 0, 1 ,currentPackage);
 				return false;
 			}
 
@@ -216,7 +222,7 @@ public class SciformaImport {
 			}
 
 			if (!verif) {
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 9, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 9, 1 ,currentPackage);
 				return false;
 			}
 
@@ -226,7 +232,7 @@ public class SciformaImport {
 				Double.parseDouble(hourlyLaborRate);
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 6, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 6, 1 ,currentPackage);
 				LOG.error(e);
 				return false;
 			}
@@ -237,7 +243,7 @@ public class SciformaImport {
 				new SimpleDateFormat("yyyyMMdd").parse(hourlyLaborRateDate);
 			} catch (ParseException e) {
 				e.printStackTrace();
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 7, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 7, 1 ,currentPackage);
 				LOG.error(e);
 				return false;
 			}
@@ -248,7 +254,7 @@ public class SciformaImport {
 				new SimpleDateFormat("yyyyMMdd").parse(lastUpdateDate);
 			} catch (ParseException e) {
 				e.printStackTrace();
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 8, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 8, 1 ,currentPackage);
 				LOG.error(e);
 				return false;
 			}
@@ -259,7 +265,7 @@ public class SciformaImport {
 				Double.parseDouble(yearlyProjectsHours);
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 9, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 9, 1 ,currentPackage);
 				LOG.error(e);
 				return false;
 			}
@@ -270,7 +276,7 @@ public class SciformaImport {
 				Double.parseDouble(growthIndex);
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 10, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 10, 1 ,currentPackage);
 				LOG.error(e);
 				return false;
 			}
@@ -281,7 +287,7 @@ public class SciformaImport {
 				Double.parseDouble(monthyLaborRate);
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 11, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 11, 1 ,currentPackage);
 				LOG.error(e);
 				return false;
 			}
@@ -289,7 +295,7 @@ public class SciformaImport {
 			/****************** Test Labour rate currency value *************************/
 			
 			if (labourRateCurrency.isEmpty()) {
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 18, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 18, 1 ,currentPackage);
 				return false;
 			}
 			
@@ -299,7 +305,7 @@ public class SciformaImport {
 				new SimpleDateFormat("yyyyMMdd").parse(monthyLaborRateDate);
 			} catch (ParseException e) {
 				e.printStackTrace();
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 12, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 12, 1 ,currentPackage);
 				LOG.error(e);
 				return false;
 			}
@@ -307,32 +313,32 @@ public class SciformaImport {
 			/****************** Test Global cost center ID *************************/
 
 			if (globalCostCenterID.length() >= 255) {
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 13, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 13, 1 ,currentPackage);
 				return false;
 			}
 
 			/****************** Test RE Global cost center *************************/
 
 			if (reGlobalCostCenter.length() >= 255) {
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 14, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 14, 1 ,currentPackage);
 				return false;
 			}
 
 			/****************** Test Global cost center name *************************/
 			if (globalCostCenterName.length() >= 255) {
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 15, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 15, 1 ,currentPackage);
 				return false;
 			}
 
 			/****************** Test Global Profit center ID *************************/
 			if (globalProfitCenterID.length() >= 255) {
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 16, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 16, 1 ,currentPackage);
 				return false;
 			}
 
 			/****************** Test Global Profit center Name *************************/
 			if (globalProfitCenterName.length() >= 255) {
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 17, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 17, 1 ,currentPackage);
 				return false;
 			}
 			
@@ -371,7 +377,7 @@ public class SciformaImport {
 					if ((reportingEntity + "_" + localCostCenterID).equals(dataRow.getStringField("Reporting entity")
 							+ "_" + dataRow.getStringField("Local cost center ID"))) {
 						// id already existing
-						USER_LOG.error(reportingEntity + "_" + localCostCenterID, 17, 1);
+						USER_LOG.error(reportingEntity + "_" + localCostCenterID, 17, 1 ,currentPackage);
 						valid = false;
 						break;
 					}
@@ -474,7 +480,7 @@ public class SciformaImport {
 						} else if ("Closing".equals(action)) {
 							insertLocalcostCenterStatusCLOSING(dataRow);
 						} else {
-							USER_LOG.error("Type action not found for line: " + line, 7, 2);
+							USER_LOG.error("Type action not found for line: " + line, 7, 2 ,currentPackage);
 							LOG.debug("Type action not found for line: " + line);
 						}
 
@@ -485,12 +491,12 @@ public class SciformaImport {
 
 				} catch (PSException e) {
 					e.printStackTrace();
-					USER_LOG.error("Cost Centers Management dataview", 7, 2);
+					USER_LOG.error("Cost Centers Management dataview", 7, 2 ,currentPackage);
 					LOG.debug("Cost Centers Management dataview error : " + e.getMessage());
 					valid = false;
 				} catch (ParseException e) {
 					e.printStackTrace();
-					USER_LOG.error("Cost Centers Management dataview", 7, 2);
+					USER_LOG.error("Cost Centers Management dataview", 7, 2 ,currentPackage);
 					LOG.debug("Cost Centers Management dataview error : " + e.getMessage());
 					valid = false;
 				}
@@ -499,7 +505,7 @@ public class SciformaImport {
 
 			if (!foundInDataview) {
 				// id not existing
-				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 16, 1);
+				USER_LOG.error(reportingEntity + "_" + localCostCenterID, 16, 1 ,currentPackage);
 				valid = false;
 			}
 			
@@ -540,7 +546,7 @@ public class SciformaImport {
 			this.global.save(false);
 		} catch (PSException e) {
 			e.printStackTrace();
-			USER_LOG.error("Cost Centers Management dataview", 7, 2);
+			USER_LOG.error("Cost Centers Management dataview", 7, 2 ,currentPackage);
 			LOG.error("Unable to save dataview");
 			LOG.debug("Unable to save Dataview : " + e.toString());
 		}

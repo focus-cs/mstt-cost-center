@@ -91,3 +91,69 @@
 2019-03-07 09:23:46,320 DEBUG com.schneider.api.cost_codes.Runner - All lines ok => clean data in DB ... 
 2019-03-07 09:23:46,320 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - DELETE FROM psnext."C5_mstt-cost-center_IN"
 2019-03-07 09:23:46,660 ERROR com.schneider.api.cost_codes.dao.BaseTamponDao - org.postgresql.util.PSQLException: Aucun résultat retourné par la requête.
+2019-03-17 16:31:11,085 INFO  com.schneider.api.cost_codes.Runner - MSTT Cost Center v1.3
+2019-03-17 16:31:11,087 DEBUG com.schneider.api.cost_codes.Runner - D:/Professionnel/MSTT/mstt-cost-center/conf/dev/psconnect.properties properties file loaded
+2019-03-17 16:31:11,472 DEBUG com.schneider.api.cost_codes.data.FileImport - Connecting to https://schneider-mstt.sciforma.net/sciforma
+2019-03-17 16:34:22,523 DEBUG com.schneider.api.cost_codes.data.FileImport - Connected to PSNext
+2019-03-17 16:34:23,199 DEBUG com.schneider.api.cost_codes.Runner - Database connected .. 
+2019-03-17 16:34:23,201 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - UPDATE psnext."C5_mstt-cost-center_IN" SET "PackageName"='bb49b596-c866-4917-b96c-a6edf6da1d8c' WHERE "PackageName" is null and "ExecutionDate" is null
+2019-03-17 16:34:23,263 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - SELECT distinct "PackageName" FROM psnext."C5_mstt-cost-center_IN" WHERE "ExecutionDate" is null
+2019-03-17 16:34:23,330 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - UPDATE psnext."C5_mstt-cost-center_IN" SET "ExecutionDate"='2019-03-17' WHERE "ExecutionDate" is null
+2019-03-17 16:34:23,379 DEBUG com.schneider.api.cost_codes.dao.BaseTamponDao - SELECT "Country", "Access Cost Code", "Reporting Entity", "Local Cost Center ID", "Local Cost Center name", "Internal Cost Center Id", "Hourly labor rate", "Hourly labor rate date", "Last update date", "Yearly Projects hours", "Growth Index", "Monthly labor rate", "Monthly labor rate date", "Global Cost Center Id", "RE global cost center", "Global Cost Center name", "Global Profit center ID", "Global Profit center name", "Labor rate currency", "Action" FROM psnext."C5_mstt-cost-center_IN" WHERE "PackageName" ='bb49b596-c866-4917-b96c-a6edf6da1d8c                                                                '
+2019-03-17 16:34:26,920 DEBUG com.schneider.api.cost_codes.data.FileImport - Locking global
+2019-03-17 16:35:59,200 DEBUG com.schneider.api.cost_codes.data.FileImport - Global locked
+2019-03-17 16:35:59,219 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'IT3200'
+2019-03-17 16:35:59,220 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '02146991_13-02-2019-'
+2019-03-17 16:35:59,220 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'IT3200_02146991_13-02-2019-'
+2019-03-17 16:35:59,221 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'IT3200_02146991_13-02-2019'
+2019-03-17 16:35:59,228 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'CA2100'
+2019-03-17 16:35:59,229 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '02206012_13-02-2019-'
+2019-03-17 16:35:59,230 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'CA2100_02206012_13-02-2019-'
+2019-03-17 16:35:59,230 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'CA2100_02206012_13-02-2019'
+2019-03-17 16:35:59,236 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'DE5801'
+2019-03-17 16:35:59,236 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000_13-02-2019-'
+2019-03-17 16:35:59,237 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'DE5801_1000_13-02-2019-'
+2019-03-17 16:35:59,238 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'DE5801_1000_13-02-2019'
+2019-03-17 16:35:59,241 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'DE5801_C-PRO AGS Regensburg Germany'
+2019-03-17 16:35:59,241 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000_13-02-2019-'
+2019-03-17 16:35:59,241 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019-'
+2019-03-17 16:35:59,241 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019'
+2019-03-17 16:35:59,242 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'DE5801_C-PRO AGS Regensburg Germany'
+2019-03-17 16:35:59,242 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000_13-02-2019-'
+2019-03-17 16:35:59,242 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019-'
+2019-03-17 16:35:59,242 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'DE5801_C-PRO AGS Regensburg Germany_1000_13-02-2019'
+2019-03-17 16:35:59,243 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0105'
+2019-03-17 16:35:59,244 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 16:35:59,245 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0105_1000-US018029_13-02-2019-'
+2019-03-17 16:35:59,245 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0105_1000-US018029_13-02-2019'
+2019-03-17 16:35:59,251 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0105_T-Partner US'
+2019-03-17 16:35:59,251 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 16:35:59,252 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0105_T-Partner US_1000-US018029_13-02-2019-'
+2019-03-17 16:35:59,252 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0105_T-Partner US_1000-US018029_13-02-2019'
+2019-03-17 16:35:59,254 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107'
+2019-03-17 16:35:59,254 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 16:35:59,254 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_1000-US018029_13-02-2019-'
+2019-03-17 16:35:59,254 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_1000-US018029_13-02-2019'
+2019-03-17 16:35:59,269 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107_T-EM US'
+2019-03-17 16:35:59,269 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US018029_13-02-2019-'
+2019-03-17 16:35:59,269 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_T-EM US_1000-US018029_13-02-2019-'
+2019-03-17 16:35:59,269 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_T-EM US_1000-US018029_13-02-2019'
+2019-03-17 16:35:59,270 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107'
+2019-03-17 16:35:59,270 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US018030_13-02-2019-'
+2019-03-17 16:35:59,270 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_1000-US018030_13-02-2019-'
+2019-03-17 16:35:59,270 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_1000-US018030_13-02-2019'
+2019-03-17 16:35:59,271 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107_T-EM US'
+2019-03-17 16:35:59,271 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US018030_13-02-2019-'
+2019-03-17 16:35:59,271 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_T-EM US_1000-US018030_13-02-2019-'
+2019-03-17 16:35:59,271 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_T-EM US_1000-US018030_13-02-2019'
+2019-03-17 16:35:59,271 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107'
+2019-03-17 16:35:59,271 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US018031_13-02-2019-'
+2019-03-17 16:35:59,271 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_1000-US018031_13-02-2019-'
+2019-03-17 16:35:59,271 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_1000-US018031_13-02-2019'
+2019-03-17 16:35:59,272 DEBUG com.schneider.api.cost_codes.data.FileImport - reportingEntity = 'US0107_T-EM US'
+2019-03-17 16:35:59,272 DEBUG com.schneider.api.cost_codes.data.FileImport - localCostCenterID = '1000-US018031_13-02-2019-'
+2019-03-17 16:35:59,274 DEBUG com.schneider.api.cost_codes.data.FileImport - concat = 'US0107_T-EM US_1000-US018031_13-02-2019-'
+2019-03-17 16:35:59,274 DEBUG com.schneider.api.cost_codes.data.FileImport - internalCostCenterID = 'US0107_T-EM US_1000-US018031_13-02-2019'
+2019-03-17 16:35:59,274 DEBUG com.schneider.api.cost_codes.data.FileImport - Unlocking global
+2019-03-17 16:38:03,049 DEBUG com.schneider.api.cost_codes.data.FileImport - Global unlocked
+2019-03-17 16:38:03,049 DEBUG com.schneider.api.cost_codes.Runner - All lines are not ok => keep data in DB ... 

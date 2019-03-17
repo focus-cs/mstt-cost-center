@@ -9,7 +9,6 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import com.schneider.api.cost_codes.business.CSVManager;
 import com.schneider.api.cost_codes.business.LineManager;
 import com.schneider.api.cost_codes.dao.BaseTamponDao;
 import com.schneider.api.cost_codes.data.LineImport;
@@ -22,13 +21,14 @@ import java.util.List;
 
 public class Runner {
 
-    public static final String APP_INFO = "MSTT Cost Center v1.2";
+    public static final String APP_INFO = "MSTT Cost Center v1.3";
 
     /**
      * Logger Class instance.
      */
     private static final Logger LOG = Logger.getLogger(Runner.class);
     private static DbConnection dbcon;
+    private static  List<String> packages;
     
 
     // -------------------------------------------------------------------------------------------------------------
@@ -57,22 +57,26 @@ public class Runner {
                             properties.getProperty("psnext.password"));
 
                     // Reconfigure log4j logger
+                    Boolean allowPurge = Boolean.parseBoolean(properties.getProperty("allow.purge.data"));
                     PropertyConfigurator.configure(args[1]);
                     initDB(properties);
                     LOG.debug("Database connected .. ");
                     // Launch process
                     //new CSVManager(session).execute("", properties);
                     BaseTamponDao dao = new BaseTamponDao(dbcon);
-                    List<LineImport> lines = dao.readDB();
-                    LineManager manager = new LineManager(session);
-                    if(manager.execute(properties, lines)){
-                        LOG.debug("All lines ok => clean data in DB ... ");
-                        dao.cleanData();
-                    }else{
-                        LOG.debug("All lines are not ok => keep data in DB ... ");
+                    packages = dao.getAllPackageName();
+                    for (String currentPackage : packages) {
+                        List<LineImport> lines = dao.readDB(currentPackage);
+                        LineManager manager = new LineManager(session, dbcon);
+                        if(manager.execute(properties, lines, currentPackage)){
+                            if(allowPurge){
+                                LOG.debug("All lines ok => clean data in DB ... ");
+                                dao.cleanData(currentPackage);
+                            }
+                        }else{
+                            LOG.debug("All lines are not ok => keep data in DB ... ");
+                        }
                     }
-                    
-                    
                 } catch (Exception e) {
                     // Exception to connect to PSNext
                     e.printStackTrace();
