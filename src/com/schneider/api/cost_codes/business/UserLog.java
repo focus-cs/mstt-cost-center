@@ -11,11 +11,11 @@ public class UserLog {
 
     private static List<String> traces;
 
-    private static BaseTamponDao dao;
+    //private static BaseTamponDao dao;
 
     public UserLog(DbConnection dbcon) {
         this.traces = new ArrayList<String>();
-        this.dao = new BaseTamponDao(dbcon);
+        //this.dao = new BaseTamponDao(dbcon);
     }
 
     public static UserLog getInstance() {
@@ -27,9 +27,9 @@ public class UserLog {
         return classInstance;
     }
     
-    public void setConnection(DbConnection dbcon) {
+    /*public void setConnection(DbConnection dbcon) {
         this.dao = new BaseTamponDao(dbcon);
-    }
+    }*/
 
     public UserLog() {
         traces = new ArrayList<String>();
@@ -43,9 +43,12 @@ public class UserLog {
         return traces;
     }
 
+    public void error(final String id, int errorCode, int breakcode) {
+        traces.add(id + ";" + errorCode + ";" + breakcode);
+    }
+    
     public void error(final String id, int errorCode, int breakcode , String packageName) {
-        //traces.add(id + ";" + errorCode + ";" + breakcode);
-        dao.writeLog(id, errorCode, breakcode, packageName);
+        //dao.writeLog(id, errorCode, breakcode, packageName);
     }
 
 }

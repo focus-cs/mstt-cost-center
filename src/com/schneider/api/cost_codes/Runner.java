@@ -18,10 +18,11 @@ import com.schneider.api.cost_codes.database.DbController;
 import com.schneider.api.cost_codes.database.DbError;
 import com.sciforma.psnext.api.Session;
 import java.util.List;
+import com.schneider.api.cost_codes.business.CSVManager;
 
 public class Runner {
 
-    public static final String APP_INFO = "MSTT Cost Center v1.3";
+    public static final String APP_INFO = "MSTT Cost Center v1.4";
 
     /**
      * Logger Class instance.
@@ -57,14 +58,14 @@ public class Runner {
                             properties.getProperty("psnext.password"));
 
                     // Reconfigure log4j logger
-                    Boolean allowPurge = Boolean.parseBoolean(properties.getProperty("allow.purge.data"));
+                    //Boolean allowPurge = Boolean.parseBoolean(properties.getProperty("allow.purge.data"));
                     PropertyConfigurator.configure(args[1]);
-                    initDB(properties);
-                    LOG.debug("Database connected .. ");
+                    //initDB(properties);
+                    //LOG.debug("Database connected .. ");
                     // Launch process
-                    //new CSVManager(session).execute("", properties);
-                    BaseTamponDao dao = new BaseTamponDao(dbcon);
-                    packages = dao.getAllPackageName();
+                    new CSVManager(session).execute("", properties);
+                    //BaseTamponDao dao = new BaseTamponDao(dbcon);
+                    /*packages = dao.getAllPackageName();
                     for (String currentPackage : packages) {
                         List<LineImport> lines = dao.readDB(currentPackage);
                         LineManager manager = new LineManager(session, dbcon);
@@ -76,7 +77,7 @@ public class Runner {
                         }else{
                             LOG.debug("All lines are not ok => keep data in DB ... ");
                         }
-                    }
+                    }*/
                 } catch (Exception e) {
                     // Exception to connect to PSNext
                     e.printStackTrace();

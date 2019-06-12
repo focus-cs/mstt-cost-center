@@ -45,7 +45,7 @@ public class LineManager {
     }
 
     public boolean execute(final Properties properties, List<LineImport> lines, String currentPackage) {
-        this.sciforma = new SciformaImport(this.session, properties, dbcon, currentPackage);
+        //this.sciforma = new SciformaImport(this.session, properties, dbcon, currentPackage);
         boolean allLineOK = true;
         try {
             if (this.sciforma.openGlobal()) {
